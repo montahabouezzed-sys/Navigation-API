@@ -33,9 +33,10 @@ def update_position(pos: Position):
 def get_status():
     if state.destination is None or state.last_distance is None:
         raise HTTPException(status_code=400, detail="No position updates yet.")
-    dest = state.destination
+
     return Status(
         distance_m=state.last_distance,
-        bearing_deg=bearing(0,0,0,0),  # placeholder
+        bearing_deg=state.last_bearing,
         trend="unknown"
     )
+

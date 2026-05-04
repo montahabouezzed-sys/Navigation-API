@@ -26,6 +26,7 @@ def update_position(pos: Position):
     tr = trend(dist, state.last_distance)
 
     state.last_distance = dist
+    state.last_bearing = brng
 
     return Status(distance_m=dist, bearing_deg=brng, trend=tr)
 

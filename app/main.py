@@ -1,8 +1,4 @@
-
 from fastapi import FastAPI, HTTPException
-"""from models import Position, Status
-from logic import haversine, bearing, trend
-import state"""
 from app.models import Position, Status
 from app.logic import haversine, bearing, trend
 from app import state
@@ -34,10 +30,22 @@ def update_position(pos: Position):
 def get_status():
     if state.destination is None or state.last_distance is None:
         raise HTTPException(status_code=400, detail="No position updates yet.")
+    dest = state.destination
+    return Status(
+        distance_m=state.last_distance,
+        bearing_deg=state.last_bearing,
+        trend="unknown"
+    )
+
+@app.get("/status", response_model=Status)
+def get_status():
+    if state.destination is None or state.last_distance is None:
+        raise HTTPException(status_code=400, detail="No position updates yet.")
 
     return Status(
         distance_m=state.last_distance,
         bearing_deg=state.last_bearing,
         trend="unknown"
     )
+
 

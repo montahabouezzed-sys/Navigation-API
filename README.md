@@ -45,7 +45,7 @@ navigation-api/
 1. Clone the repository
 ```bash 
 
-git clone https://github.com/<your-username>/Navigation-API.git
+git clone https://github.com/montahabouezzed-sys/Navigation-API.git
 cd Navigation-API
 ```
 

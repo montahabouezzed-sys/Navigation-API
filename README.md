@@ -43,25 +43,32 @@ navigation-api/
 
 ▶️ Run Locally
 1. Clone the repository
-   batch
-   '''
+```bash 
+
 git clone https://github.com/<your-username>/Navigation-API.git
 cd Navigation-API
-'''
+```
 
 2. Create a virtual environment
+ ```bash 
 python -m venv venv
 venv\Scripts\activate
+```
 
 3. Install dependencies
+```bash 
    pip install -r requirements.txt
+   ```
 
 4. Start the server
+```bash 
 uvicorn app.main:app --reload
+   ```
 
-5. Open the API docs
+5. Open the API docs, visit:
+```bash    
 http://127.0.0.1:8000/docs
-
+ ```
 
 📌 Future Extensions
 Speed estimation

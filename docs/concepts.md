@@ -41,7 +41,7 @@ Define:
 ```math
 \[
 \Delta\varphi = \varphi_2 - \varphi_1, \qquad
-\Delta\lambda = \theta_2 - \theta_1
+\Delta\theta = \theta_2 - \theta_1
 \]
 ```
 
@@ -50,7 +50,7 @@ Compute:
 ```math
 \[
 a = \sin^2\left(\frac{\Delta\varphi}{2}\right)
-  + \cos(\varphi_1)\cos(\varphi_2)\sin^2\left(\frac{\Delta\lambda}{2}\right)
+  + \cos(\varphi_1)\cos(\varphi_2)\sin^2\left(\frac{\Delta\theta}{2}\right)
 \]
 ```
 
@@ -98,25 +98,21 @@ It answers:
 Formula:
 
 ```math
-
-\[
 \theta =
 \arctan2\left(
 \sin(\Delta\lambda)\cos(\varphi_2),
 \cos(\varphi_1)\sin(\varphi_2)
 - \sin(\varphi_1)\cos(\varphi_2)\cos(\Delta\lambda)
 \right)
-\]
+
 ```
 
 
 Convert to degrees and normalize:
 
 ```math
-
-\[
 \theta_{\text{deg}} = (\theta \cdot \frac{180}{\pi} + 360) \bmod 360
-\]
+
 ```
 
 

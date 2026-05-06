@@ -29,21 +29,21 @@ Fully modular structure
 
 
 🗂 Project Structure
-\\\
+```text
 navigation-api/
-│── app/
-│   ├── main.py        # FastAPI routes
-│   ├── models.py      # Pydantic models
-│   ├── logic.py       # Haversine, bearing, trend
-│   └── state.py       # In-memory state
-│── tests/             # (future)
-|── docs/
-|   ├── concepts.md        # Definitions, mathematical derivations for some terms used in the API Navigation
-│   ├── bearing_diagram.py      # code used to generate a diagram showing the bearing 
-│   ├── bearing_diagram.png     # image / diagram showing the bearing 
-│── requirements.txt
-│── README.md
-\\\
+├── app/
+│   ├── main.py
+│   ├── models.py
+│   ├── logic.py
+│   ├── state.py
+│   └── tests/
+├── docs/
+│   ├── concepts.md
+│   ├── bearing_diagram.py
+│   ├── bearing_diagram.png
+├── requirements.txt
+└── README.md
+
  
 ▶️ Run Locally
 1. Clone the repository

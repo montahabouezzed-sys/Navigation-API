@@ -169,10 +169,10 @@ A bearing diagram showing:
 - Bearing angle  
 - Great‑circle path  
 
-**File placeholder:**  
-`docs/bearing_diagram.png`
 
-The bearing diagram was generated using the script `docs/bearing_diagram.py` 
+#### Diagram
+![bearing_diagram](./docs/bearing_diagram.png)
+*The bearing diagram was generated using the script `docs/bearing_diagram.py` *
 
 ---
 

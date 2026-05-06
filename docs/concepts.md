@@ -140,12 +140,14 @@ Where:
 ---
 
 ## 5. Coordinate System Orientation
-
+** Navigation convention (North = up, East = right) **
 The Navigation API uses the standard geodesy convention:
 
 - \(0^\circ\) = North  
 - \(90^\circ\) = East  
 - Bearing measured clockwise  
+
+Diagram looks like:
 
 N (0°)
 ↑

@@ -30,20 +30,20 @@ Fully modular structure
 
 🗂 Project Structure
 ```text
-navigation-api/
-├── app/
+📂 navigation-api/
+├── 📂 app/
 │   ├── main.py
 │   ├── models.py
 │   ├── logic.py
 │   ├── state.py
 │   └── tests/
-├── docs/
+├── 📂 docs/
 │   ├── concepts.md
 │   ├── bearing_diagram.py
 │   ├── bearing_diagram.png
 ├── requirements.txt
 └── README.md
-
+```
  
 ▶️ Run Locally
 1. Clone the repository

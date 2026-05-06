@@ -39,28 +39,21 @@ Given:
 
 Define:
 ```math
-\[
 \Delta\varphi = \varphi_2 - \varphi_1, \qquad
 \Delta\theta = \theta_2 - \theta_1
-\]
 ```
 
 Compute:
 
 ```math
-\[
 a = \sin^2\left(\frac{\Delta\varphi}{2}\right)
   + \cos(\varphi_1)\cos(\varphi_2)\sin^2\left(\frac{\Delta\theta}{2}\right)
-\]
 ```
 
 
 
 ```math
-\[
 c = 2 \cdot \arctan2\left(\sqrt{a}, \sqrt{1-a}\right)
-\]
-
 ```
 
 Distance:
@@ -68,9 +61,7 @@ Distance:
 
 
 ```math
-\[
 d = R \cdot c
-\]
 ```
 
 
@@ -78,9 +69,7 @@ Where:
 
 
 ```math
-\[
 R = 6\,371\,000 \text{ m}
-\]
 ```
 
 
@@ -131,46 +120,37 @@ The **trend** indicates whether the user is moving toward or away from the desti
 
 Given:
 - Previous distance: 
-```math  \( d_{\text{prev}} \) ```
+```math
+\( d_{\text{prev}} \)
+```
 - Current distance: 
-```math \( d_{\text{curr}} \) ```
+```math
+\( d_{\text{curr}} \)
+```
 
 We compare:
 
 ```math
-
-\[
 \text{If } d_{\text{curr}} < d_{\text{prev}} \Rightarrow \text{getting closer}
-\]
 ```
 
 ```math
-\[
 \text{If } d_{\text{curr}} > d_{\text{prev}} \Rightarrow \text{getting farther}
-\]
 ```
 ```math
-\[
 \text{If } |d_{\text{curr}} - d_{\text{prev}}| < \varepsilon \Rightarrow \text{stationary}
-\]
 ```
 
 ```math
-\[
 \text{If no previous distance exists} \Rightarrow \text{unknown}
-\]
 ```
-
 
 Where:
 
 
 ```math
-\[
 \varepsilon \approx 0.5 \text{ m}
-\]
 ```
-
 
 ---
 

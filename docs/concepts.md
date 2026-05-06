@@ -31,9 +31,15 @@ The **Haversine formula** computes the great‑circle distance between two point
 Given:
 
 ```math
-- Current position: \( (\varphi_1, \lambda_1) \)
-- Destination: \( (\varphi_2, \lambda_2) \)
+- Current position: ```math
+(\varphi_1, \lambda_1)
 ```
+
+- Destination:
+```math
+  \( (\varphi_2, \lambda_2) \)
+```
+
 Define:
 
 
@@ -55,11 +61,11 @@ Compute:
 a = \sin^2\left(\frac{\Delta\varphi}{2}\right)
   + \cos(\varphi_1)\cos(\varphi_2)\sin^2\left(\frac{\Delta\lambda}{2}\right)
 \]
+```
 
 
 
-
-
+```math
 \[
 c = 2 \cdot \arctan2\left(\sqrt{a}, \sqrt{1-a}\right)
 \]

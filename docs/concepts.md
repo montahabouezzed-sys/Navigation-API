@@ -12,7 +12,7 @@ a geodesy background.
 - Range: **–90° to +90°**
 - Positive = north, negative = south.
 
-### **Longitude ((\(\theta \))**
+### **Longitude (\(\theta \))**
 - Measures how far east or west a point is from the Prime Meridian.
 - Range: **–180° to +180°**
 - Positive = east, negative = west.

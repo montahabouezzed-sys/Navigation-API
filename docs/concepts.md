@@ -146,6 +146,7 @@ The Navigation API uses the standard geodesy convention:
 - \(0^\circ\) = North  
 - \(90^\circ\) = East  
 - Bearing measured clockwise  
+
 N (0°)
 ↑
 W (270°)   E (90°)

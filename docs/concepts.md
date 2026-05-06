@@ -172,6 +172,8 @@ A bearing diagram showing:
 **File placeholder:**  
 `docs/bearing_diagram.png`
 
+The bearing diagram was generated using the script `docs/bearing_diagram.py` 
+
 ---
 
 ## 7. References

@@ -7,23 +7,28 @@ a geodesy background.
 ---
 
 ## 1. Geographic Coordinates
-
+```markdown
+```math
 ### **Latitude \( \varphi \)**
 - Angular distance north/south of the equator  
 - Range: \( -90^\circ \) to \( +90^\circ \)
+```
 
+```markdown
+```math
 ### **Longitude \( \lambda \)**
 - Angular distance east/west of the Prime Meridian  
 - Range: \( -180^\circ \) to \( +180^\circ \)
+```
 
 A point on Earth is represented as:
 
-
-
+```markdown
+```math
 \[
 (\varphi, \lambda)
 \]
-
+```
 
 
 ---
@@ -33,24 +38,28 @@ A point on Earth is represented as:
 The **Haversine formula** computes the great‑circle distance between two points on a sphere.
 
 Given:
+```markdown
+```math
 - Current position: \( (\varphi_1, \lambda_1) \)
 - Destination: \( (\varphi_2, \lambda_2) \)
-
+```
 Define:
 
-
+```markdown
+```math
 
 \[
 \Delta\varphi = \varphi_2 - \varphi_1, \qquad
 \Delta\lambda = \lambda_2 - \lambda_1
 \]
-
+```
 
 
 Compute:
 
 
-
+```markdown
+```math
 \[
 a = \sin^2\left(\frac{\Delta\varphi}{2}\right)
   + \cos(\varphi_1)\cos(\varphi_2)\sin^2\left(\frac{\Delta\lambda}{2}\right)
@@ -64,26 +73,28 @@ a = \sin^2\left(\frac{\Delta\varphi}{2}\right)
 c = 2 \cdot \arctan2\left(\sqrt{a}, \sqrt{1-a}\right)
 \]
 
-
+```
 
 Distance:
 
 
-
+```markdown
+```math
 \[
 d = R \cdot c
 \]
-
+```
 
 
 Where:
 
 
-
+```markdown
+```math
 \[
 R = 6\,371\,000 \text{ m}
 \]
-
+```
 
 
 ---

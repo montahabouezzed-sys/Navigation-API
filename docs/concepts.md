@@ -49,30 +49,19 @@ Compute:
 a = \sin^2\left(\frac{\Delta\varphi}{2}\right)
   + \cos(\varphi_1)\cos(\varphi_2)\sin^2\left(\frac{\Delta\theta}{2}\right)
 ```
-
-
-
 ```math
 c = 2 \cdot \arctan2\left(\sqrt{a}, \sqrt{1-a}\right)
 ```
 
 Distance:
-
-
-
 ```math
 d = R \cdot c
 ```
 
-
 Where:
-
-
 ```math
 R = 6\,371\,000 \text{ m}
 ```
-
-
 ---
 
 ## 3. Bearing (Initial Azimuth)
@@ -87,16 +76,16 @@ It answers:
 Formula:
 
 ```math
-\theta =
+\theta_b =
 \arctan2\left(
-\sin(\Delta\lambda)\cos(\varphi_2),
+\sin(\Delta\theta)\cos(\varphi_2),
 \cos(\varphi_1)\sin(\varphi_2)
-- \sin(\varphi_1)\cos(\varphi_2)\cos(\Delta\lambda)
+- \sin(\varphi_1)\cos(\varphi_2)\cos(\Delta\theta)
 \right)
 ```
 Convert to degrees and normalize:
 ```math
-\theta_{\text{deg}} = (\theta \cdot \frac{180}{\pi} + 360) \bmod 360
+\theta_{b_\text{deg}} = (\theta_b \cdot \frac{180}{\pi} + 360) \bmod 360
 ```
 
 ### **Interpretation**
@@ -154,6 +143,15 @@ Where:
 
 The Navigation API uses the standard geodesy convention:
 
+- \(0^\circ\) = North  
+- \(90^\circ\) = East  
+- Bearing measured clockwise  
+N (0°)
+↑
+W (270°)   E (90°)
+↓
+S (180°)
+
 - North is \(0^\circ\)
 - Angles increase clockwise
 - Earth is approximated as a sphere (sufficient for short‑range navigation)
@@ -163,7 +161,6 @@ This matches conventions in:
 - maritime navigation  
 - robotics  
 - GNSS receivers  
-
 ---
 
 ## 6. Bearing Diagram (Placeholder)
@@ -183,8 +180,7 @@ A diagram will be added here showing:
 
 ## 7. References
 
-- Movable Type Scripts — Great‑circle distance and bearing formulas  
-- FAA Navigation Handbook  
+- Aviation Handbooks & Manuals
 - GPS.gov — Positioning Basics  
 
 ---

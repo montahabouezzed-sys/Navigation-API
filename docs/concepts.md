@@ -7,13 +7,15 @@ a geodesy background.
 ---
 
 ## 1. Geographic Coordinates
-### **Latitude \( \varphi \)**
-- Angular distance north/south of the equator  
-- Range: −90° to +90°
+### **Latitude (φ)**
+- Measures how far north or south a point is from the equator.
+- Range: **–90° to +90°**
+- Positive = north, negative = south.
 
-### Longitude \( \lambda \)
-- Angular distance east/west of the Prime Meridian  
-- Range: −180° to +180°
+### **Longitude (λ)**
+- Measures how far east or west a point is from the Prime Meridian.
+- Range: **–180° to +180°**
+- Positive = east, negative = west.
 
 A point on Earth is represented as:
 

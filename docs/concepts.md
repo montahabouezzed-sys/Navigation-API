@@ -34,7 +34,7 @@ Given:
 ```
 - Destination:
 ```math
-  \( (\varphi_2, \theta_2) \)
+ (\varphi_2, \theta_2) 
 ```
 
 Define:
@@ -107,10 +107,10 @@ Convert to degrees and normalize:
 
 ### **Interpretation**
 ```math
-- \(0^\circ\) = North  
-- \(90^\circ\) = East  
-- \(180^\circ\) = South  
-- \(270^\circ\) = West  
+0^\circ = North  
+90^\circ = East  
+180^\circ = South  
+270^\circ = West  
 ```
 ---
 

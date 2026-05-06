@@ -172,7 +172,7 @@ A bearing diagram showing:
 
 #### Diagram
 ![bearing_diagram](bearing_diagram.png)
-*The bearing diagram was generated using the script `docs/bearing_diagram.py` *
+*The bearing diagram was generated using the script `docs/bearing_diagram.py`*
 
 ---
 

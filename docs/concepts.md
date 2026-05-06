@@ -20,11 +20,11 @@ A point on Earth is represented as:
 
 ```math
 (\varphi, \lambda)
+```
 
 
----
 
-## 2. Haversine Distance
+2. Haversine Distance
 
 The **Haversine formula** computes the great‑circle distance between two points on a sphere.
 

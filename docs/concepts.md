@@ -8,12 +8,16 @@ a geodesy background.
 
 ## 1. Geographic Coordinates
 
-### Latitude ```math ( \varphi \) ```
+### Latitude 
+```math  \varphi 
+```
 
 - Angular distance north/south of the equator  
 - Range: −90° to +90°
 
-### Longitude \( \lambda \)
+### Longitude 
+```math ( \lambda \)
+```
 - Angular distance east/west of the Prime Meridian  
 - Range: −180° to +180°
 

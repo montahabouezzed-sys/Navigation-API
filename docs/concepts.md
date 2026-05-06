@@ -171,7 +171,7 @@ A bearing diagram showing:
 
 
 #### Diagram
-![bearing_diagram](./docs/bearing_diagram.png)
+![bearing_diagram](bearing_diagram.png)
 *The bearing diagram was generated using the script `docs/bearing_diagram.py` *
 
 ---

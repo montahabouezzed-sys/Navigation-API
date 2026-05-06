@@ -18,44 +18,35 @@ a geodesy background.
 - Positive = east, negative = west.
 
 A point on Earth is represented as:
-
 ```math
 (\varphi, \lambda)
 ```
-
-
+---
 
 2. Haversine Distance
 
 The **Haversine formula** computes the great‑circle distance between two points on a sphere.
 
 Given:
-
+- Current position:
 ```math
 - Current position: ```math
 (\varphi_1, \lambda_1)
 ```
-
 - Destination:
 ```math
   \( (\varphi_2, \lambda_2) \)
 ```
 
 Define:
-
-
 ```math
-
 \[
 \Delta\varphi = \varphi_2 - \varphi_1, \qquad
 \Delta\lambda = \lambda_2 - \lambda_1
 \]
 ```
 
-
 Compute:
-
-
 
 ```math
 \[

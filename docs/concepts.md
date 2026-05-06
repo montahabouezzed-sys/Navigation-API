@@ -159,9 +159,9 @@ This matches conventions in:
 - GNSS receivers  
 ---
 
-## 6. Bearing Diagram (Placeholder)
+## 6. Bearing Diagram
 
-A diagram will be added here showing:
+A bearing diagram showing:
 
 - Current position  
 - Destination  

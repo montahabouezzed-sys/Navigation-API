@@ -41,6 +41,11 @@ Fully modular structure
 │   ├── concepts.md
 │   ├── bearing_diagram.py
 │   ├── bearing_diagram.png
+│── 📂 animation/
+│   ├── animation_map.py
+│   ├── positions_example.json
+│   └── output/
+│       └── ...
 ├── requirements.txt
 └── README.md
 ```

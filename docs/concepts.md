@@ -12,14 +12,14 @@ a geodesy background.
 - Range: **–90° to +90°**
 - Positive = north, negative = south.
 
-### **Longitude (\(\theta \))**
+### **Longitude (\(\theta \) **
 - Measures how far east or west a point is from the Prime Meridian.
 - Range: **–180° to +180°**
 - Positive = east, negative = west.
 
 A point on Earth is represented as:
 ```math
-(\varphi, \lambda)
+(\varphi, \theta)
 ```
 ---
 
@@ -30,19 +30,18 @@ The **Haversine formula** computes the great‑circle distance between two point
 Given:
 - Current position:
 ```math
-- Current position: ```math
-(\varphi_1, \lambda_1)
+(\varphi_1, \theta_1)
 ```
 - Destination:
 ```math
-  \( (\varphi_2, \lambda_2) \)
+  \( (\varphi_2, \theta_2) \)
 ```
 
 Define:
 ```math
 \[
 \Delta\varphi = \varphi_2 - \varphi_1, \qquad
-\Delta\lambda = \lambda_2 - \lambda_1
+\Delta\lambda = \theta_2 - \theta_1
 \]
 ```
 

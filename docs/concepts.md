@@ -8,15 +8,15 @@ a geodesy background.
 
 ## 1. Geographic Coordinates
 
-```math
-### **Latitude \( \varphi \)**
+
+### **Latitude ```math \( \varphi \)**
 - Angular distance north/south of the equator  
 - Range: \( -90^\circ \) to \( +90^\circ \)
 ```
 
 
-```math
-### **Longitude \( \lambda \)**
+### **Longitude 
+```math \( \lambda \)**
 - Angular distance east/west of the Prime Meridian  
 - Range: \( -180^\circ \) to \( +180^\circ \)
 ```
@@ -146,8 +146,10 @@ Convert to degrees and normalize:
 The **trend** indicates whether the user is moving toward or away from the destination.
 
 Given:
-- Previous distance: \( d_{\text{prev}} \)
-- Current distance: \( d_{\text{curr}} \)
+- Previous distance: 
+```math  \( d_{\text{prev}} \) ```
+- Current distance: 
+```math \( d_{\text{curr}} \) ```
 
 We compare:
 
@@ -156,18 +158,20 @@ We compare:
 \[
 \text{If } d_{\text{curr}} < d_{\text{prev}} \Rightarrow \text{getting closer}
 \]
+```
 
-
+```math
 \[
 \text{If } d_{\text{curr}} > d_{\text{prev}} \Rightarrow \text{getting farther}
 \]
-
-
+```
+```math
 \[
 \text{If } |d_{\text{curr}} - d_{\text{prev}}| < \varepsilon \Rightarrow \text{stationary}
 \]
+```
 
-
+```math
 \[
 \text{If no previous distance exists} \Rightarrow \text{unknown}
 \]

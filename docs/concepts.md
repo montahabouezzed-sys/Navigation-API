@@ -8,27 +8,18 @@ a geodesy background.
 
 ## 1. Geographic Coordinates
 
-
-### **Latitude ```math \( \varphi \)**
+### Latitude \( \varphi \)
 - Angular distance north/south of the equator  
-- Range: \( -90^\circ \) to \( +90^\circ \)
-```
+- Range: −90° to +90°
 
-
-### **Longitude 
-```math \( \lambda \)**
+### Longitude \( \lambda \)
 - Angular distance east/west of the Prime Meridian  
-- Range: \( -180^\circ \) to \( +180^\circ \)
-```
+- Range: −180° to +180°
 
 A point on Earth is represented as:
 
-
 ```math
-\[
 (\varphi, \lambda)
-\]
-```
 
 
 ---

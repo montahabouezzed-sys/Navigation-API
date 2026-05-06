@@ -140,24 +140,17 @@ Where:
 ---
 
 ## 5. Coordinate System Orientation
-** Navigation convention (North = up, East = right) **
 The Navigation API uses the standard geodesy convention:
 
-- \(0^\circ\) = North  
-- \(90^\circ\) = East  
-- Bearing measured clockwise  
-
-Diagram looks like:
+- North is \(0^\circ\)
+- Angles increase clockwise
+- Earth is approximated as a sphere (sufficient for short‑range navigation)
 
 N (0°)
 ↑
 W (270°)   E (90°)
 ↓
 S (180°)
-
-- North is \(0^\circ\)
-- Angles increase clockwise
-- Earth is approximated as a sphere (sufficient for short‑range navigation)
 
 This matches conventions in:
 - aviation  

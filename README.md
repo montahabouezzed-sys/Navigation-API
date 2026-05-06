@@ -29,7 +29,7 @@ Fully modular structure
 
 
 🗂 Project Structure
-
+\\\
 navigation-api/
 │── app/
 │   ├── main.py        # FastAPI routes
@@ -43,8 +43,8 @@ navigation-api/
 │   ├── bearing_diagram.png     # image / diagram showing the bearing 
 │── requirements.txt
 │── README.md
-
-
+\\\
+ 
 ▶️ Run Locally
 1. Clone the repository
 ```bash 

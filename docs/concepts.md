@@ -12,7 +12,7 @@ a geodesy background.
 - Range: **–90° to +90°**
 - Positive = north, negative = south.
 
-### **Longitude ```math (\theta)  ``` **
+### **Longitude (θ) **
 - Measures how far east or west a point is from the Prime Meridian.
 - Range: **–180° to +180°**
 - Positive = east, negative = west.
@@ -93,17 +93,11 @@ Formula:
 \cos(\varphi_1)\sin(\varphi_2)
 - \sin(\varphi_1)\cos(\varphi_2)\cos(\Delta\lambda)
 \right)
-
 ```
-
-
 Convert to degrees and normalize:
-
 ```math
 \theta_{\text{deg}} = (\theta \cdot \frac{180}{\pi} + 360) \bmod 360
-
 ```
-
 
 ### **Interpretation**
 ```math
@@ -131,7 +125,7 @@ Given:
 ```
 - Current distance: 
 ```math
-\( d_{\text{curr}} \)
+d_{\text{curr}}
 ```
 
 We compare:
@@ -139,20 +133,16 @@ We compare:
 ```math
 \text{If } d_{\text{curr}} < d_{\text{prev}} \Rightarrow \text{getting closer}
 ```
-
 ```math
 \text{If } d_{\text{curr}} > d_{\text{prev}} \Rightarrow \text{getting farther}
 ```
 ```math
 \text{If } |d_{\text{curr}} - d_{\text{prev}}| < \varepsilon \Rightarrow \text{stationary}
 ```
-
 ```math
 \text{If no previous distance exists} \Rightarrow \text{unknown}
 ```
-
 Where:
-
 
 ```math
 \varepsilon \approx 0.5 \text{ m}

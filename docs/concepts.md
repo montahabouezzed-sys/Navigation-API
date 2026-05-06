@@ -107,9 +107,15 @@ Convert to degrees and normalize:
 
 ### **Interpretation**
 ```math
-0^\circ = North  
+0^\circ = North
+```
+```math
 90^\circ = East  
+```
+```math
 180^\circ = South  
+```
+```math
 270^\circ = West  
 ```
 ---
@@ -121,7 +127,7 @@ The **trend** indicates whether the user is moving toward or away from the desti
 Given:
 - Previous distance: 
 ```math
-\( d_{\text{prev}} \)
+ d_{\text{prev}} 
 ```
 - Current distance: 
 ```math

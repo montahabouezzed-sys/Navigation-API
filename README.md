@@ -37,6 +37,10 @@ navigation-api/
 │   ├── logic.py       # Haversine, bearing, trend
 │   └── state.py       # In-memory state
 │── tests/             # (future)
+|── docs/
+|   ├── concepts.md        # Definitions, mathematical derivations for some terms used in the API Navigation
+│   ├── bearing_diagram.py      # code used to generate a diagram showing the bearing 
+│   ├── bearing_diagram.png     # image / diagram showing the bearing 
 │── requirements.txt
 │── README.md
 

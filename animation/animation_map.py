@@ -99,6 +99,26 @@ var triangleIcon = L.divIcon({
 js_positions = json.dumps(positions)
 js_bearings = json.dumps(bearings)
 
+
+style = """
+<style>
+.play-button-container {
+    background: white;
+    padding: 6px;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    z-index: 9999;
+}
+#play-btn {
+    font-size: 16px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+</style>
+"""
+m.get_root().html.add_child(folium.Element(style))
+
+
 ## --. Animation -- 
 animation_js = f"""
 <script>

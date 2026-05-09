@@ -1,7 +1,6 @@
 import json
 import math
 import folium
-from folium.features import CustomIcon
 from pathlib import Path
 
 # ------------------------------------------------------------
@@ -13,7 +12,7 @@ INPUT_FILE = Path(__file__).parent / "positions_example.json"
 OUTPUT_FILE = Path(__file__).parent / "output" / "map_animation.html"
 
 # ------------------------------------------------------------
-# Bearing calculation (φ = lat, θ = lon)
+# Bearing calculation
 # ------------------------------------------------------------
 
 def compute_bearing(lat1, lon1, lat2, lon2):
@@ -54,18 +53,22 @@ for i in range(len(positions) - 1):
 bearings.append(bearings[-1])
 
 # ------------------------------------------------------------
-# Create Folium map
+# Create Folium map (ESRI Satellite)
 # ------------------------------------------------------------
 
 start_lat, start_lon = positions[0]
-#m = folium.Map(location=[start_lat, start_lon], zoom_start=16)
+
 m = folium.Map(
     location=[start_lat, start_lon],
     zoom_start=16,
-    tiles="CartoDB positron"
+    tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{x}/{y}",
+    attr="Esri World Imagery"
 )
 
-# Add destination marker
+# ------------------------------------------------------------
+# Destination marker
+# ------------------------------------------------------------
+
 dest_lat, dest_lon = positions[-1]
 folium.Marker(
     location=[dest_lat, dest_lon],
@@ -74,7 +77,7 @@ folium.Marker(
 ).add_to(m)
 
 # ------------------------------------------------------------
-# Add JS animation logic
+# JavaScript animation logic
 # ------------------------------------------------------------
 
 triangle_icon = """
@@ -93,7 +96,6 @@ var triangleIcon = L.divIcon({
 });
 """
 
-# Convert Python lists to JS arrays
 js_positions = json.dumps(positions)
 js_bearings = json.dumps(bearings)
 
@@ -109,7 +111,7 @@ var frameDelay = {FRAME_DELAY_MS};
 var marker = L.marker(positions[0]).addTo({m.get_name()});
 var heading = L.marker(positions[0], {{icon: triangleIcon}}).addTo({m.get_name()});
 
-var trail = L.polyline([positions[0]], {{color: 'blue'}}).addTo({m.get_name()});
+var trail = L.polyline([positions[0]], {{color: 'yellow'}}).addTo({m.get_name()});
 
 var currentIndex = 0;
 var playing = false;
@@ -160,31 +162,6 @@ playButton.addTo({m.get_name()});
 
 m.get_root().html.add_child(folium.Element(animation_js))
 
-# Add play button
-play_button_js = f"""
-<script>
-
-function startAnimation() {{
-    if (!playing) {{
-        playing = true;
-        updateFrame();
-    }}
-}}
-
-var playButton = L.control({{position: 'topright'}});
-playButton.onAdd = function(map) {{
-    var div = L.DomUtil.create('div', 'play-button');
-    div.innerHTML = '<button style="font-size:16px;padding:6px;">▶ Play</button>';
-    div.onclick = startAnimation;
-    return div;
-}};
-playButton.addTo({m.get_name()});
-
-</script>
-"""
-
-m.get_root().html.add_child(folium.Element(play_button_js))
-# ------------------------------------------------------
 # ------------------------------------------------------------
 # Save output
 # ------------------------------------------------------------
@@ -193,4 +170,3 @@ OUTPUT_FILE.parent.mkdir(exist_ok=True)
 m.save(str(OUTPUT_FILE))
 
 print(f"Animation saved to: {OUTPUT_FILE}")
-

@@ -107,7 +107,11 @@ style = """
     padding: 6px;
     border-radius: 6px;
     box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    position: relative;
     z-index: 9999;
+}
+.leaflet-top.leaflet-right {
+    overflow: visible !important;
 }
 #play-btn {
     font-size: 16px;
@@ -116,7 +120,9 @@ style = """
 }
 </style>
 """
-m.get_root().html.add_child(folium.Element(style))
+
+
+m.get_root().header.add_child(folium.Element(style))
 
 
 ## --. Animation -- 

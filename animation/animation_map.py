@@ -62,10 +62,8 @@ start_lat, start_lon = positions[0]
 m = folium.Map(
     location=[start_lat, start_lon],
     zoom_start=16,
-    tiles="https://tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-    attr="OSM HOT"
+    tiles="CartoDB positron"
 )
-
 
 # Add destination marker
 dest_lat, dest_lon = positions[-1]

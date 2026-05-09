@@ -99,6 +99,7 @@ var triangleIcon = L.divIcon({
 js_positions = json.dumps(positions)
 js_bearings = json.dumps(bearings)
 
+## --. Animation -- 
 animation_js = f"""
 <script>
 
@@ -131,11 +132,9 @@ function updateFrame() {{
     marker.setLatLng(pos);
     heading.setLatLng(pos);
 
-    // Rotate triangle
     var iconEl = heading.getElement().querySelector("div");
     iconEl.style.transform = "rotate(" + brg + "deg)";
 
-    // Extend trail
     trail.addLatLng(pos);
 
     setTimeout(updateFrame, frameDelay);
@@ -148,21 +147,11 @@ function startAnimation() {{
     }}
 }}
 
-var playButton = L.control({{position: 'topright'}});
-playButton.onAdd = function(map) {{
-    var div = L.DomUtil.create('div', 'play-button');
-    div.innerHTML = '<button style="font-size:16px;padding:6px;">▶ Play</button>';
-    div.onclick = startAnimation;
-    return div;
-}};
-playButton.addTo({m.get_name()});
-
 </script>
 """
-
 m.get_root().html.add_child(folium.Element(animation_js))
 
-
+# ----- Add playy button ----------------
 play_button_js = f"""
 <script>
 
@@ -174,8 +163,7 @@ var playControl = L.Control.extend({{
             startAnimation();
         }};
         return div;
-    },
-
+    }},
     onRemove: function(map) {{}}
 }});
 
@@ -183,8 +171,8 @@ var playControl = L.Control.extend({{
 
 </script>
 """
-
 m.get_root().html.add_child(folium.Element(play_button_js))
+
 
 # ------------------------------------------------------------
 # Save output

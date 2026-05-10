@@ -119,12 +119,9 @@ pip install folium
 
 📸 Example Output
 
-[▶ View the full animation](output/map_animation.html)
-
-![Preview](docs/preview.png)
-
-screenshot here
-
+#### [▶ View the full animation]
+![gif file](output/map_animation.gif)
+*....*
 
 
 

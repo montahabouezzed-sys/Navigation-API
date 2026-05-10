@@ -17,18 +17,25 @@ The output is a standalone HTML file that runs entirely in the browser.
 
 ## 📁 Project Structure
 
-
-
-
----
+```text
+📂 navigation-api/
+├── 📂 app/
+│  
+│── 📂 animation/
+│   ├── animation_map.py
+│   ├── positions_example.json
+│   └── output/
+│       └── map_animation.html
+├
+└
+```
 
 ## 📥 Input Data
 
 The animation uses a list of GPS coordinates stored in:
+```bash 
 positions_example.json
-
-
-
+```
 Example format:
 
 ```json
@@ -43,24 +50,25 @@ Example format:
 ▶️ Running the Script
 
 Generate the animation:
+```bash 
 python animation_map.py
-
+```
 This creates:
-bach
-
+```bash 
 output/map_animation.html
-
+```
 
 
 🌐 Viewing the Animation
 Because browsers block JavaScript in file:/// mode,
 you must serve the file using a local HTTP server:
-
+```bash 
 python -m http.server 8000
-
+```
 Then open:
+```bash 
 http://localhost:8000/output/map_animation.html
-
+```
 You will see:
 
 ESRI satellite imagery
@@ -97,8 +105,9 @@ The triangle rotates according to the bearing and moves along the path with a co
 ✔ Requirements
 Install dependencies:
 
-bash
+```bash 
 pip install folium
+```
 (Optional) If you use a virtual environment, ensure it is activated before running the script.
 
 🎯 Features

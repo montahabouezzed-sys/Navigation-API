@@ -109,19 +109,20 @@ pip install folium
 (Optional) If you use a virtual environment, ensure it is activated before running the script.
 
 🎯 Features
-ESRI satellite tiles
 
-Rotating triangle heading marker
-
-Play button UI
-
-Smooth animation
-
-Trail polyline
-
-Fully offline HTML output
+- ESRI satellite tiles
+- Rotating triangle heading marker
+- Play button UI
+- Smooth animation
+- Trail polyline
+- Fully offline HTML output
 
 📸 Example Output
+
+[▶ View the full animation](output/map_animation.html)
+
+![Preview](docs/preview.png)
+
 screenshot here
 
 

@@ -117,11 +117,13 @@ pip install folium
 - Trail polyline
 - Fully offline HTML output
 
-📸 Example Output
 
-#### [▶ View the full animation]
-![gif file](output/map_animation.gif)
-*....*
+## 🎬 Animation Preview
+
+![Navigation Animation](output/animation.gif)
+
+👉 [Download the full animation (HTML)](animation/output/map_animation.html)
+
 
 
 

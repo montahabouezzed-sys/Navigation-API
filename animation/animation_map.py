@@ -3,6 +3,131 @@ import math
 import folium
 from pathlib import Path
 
+# --- Configuration ---
+FRAME_DELAY_MS = 300
+OUTPUT_FILE = Path(__file__).parent / "map_animation.html"
+
+# JSON data
+positions = [
+    [50.710000, 7.090000], [50.710300, 7.090200], [50.710600, 7.090450],
+    [50.710900, 7.090700], [50.711200, 7.090950], [50.711500, 7.091200],
+    [50.711800, 7.091450], [50.712100, 7.091700], [50.712400, 7.091950],
+    [50.712700, 7.092200]
+]
+
+
+def compute_bearing(lat1, lon1, lat2, lon2):
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    delta_theta = math.radians(lon2 - lon1)
+    x = math.sin(delta_theta) * math.cos(phi2)
+    y = math.cos(phi1) * math.sin(phi2) - math.sin(phi1) * math.cos(phi2) * math.cos(delta_theta)
+    return (math.degrees(math.atan2(x, y)) + 360) % 360
+
+
+# Calculate bearings for each segment
+bearings = [compute_bearing(*positions[i], *positions[i + 1]) for i in range(len(positions) - 1)]
+bearings.append(bearings[-1])  # Keep last heading
+
+# --- Create Map ---
+m = folium.Map(
+    location=positions[0],
+    zoom_start=17,
+    tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{x}/{y}",
+    attr="Esri World Imagery"
+)
+
+# --- CSS and JS Elements ---
+map_id = m.get_name()
+
+style = """
+<style>
+    .play-btn-ctrl {
+        background: white; padding: 10px; border: 2px solid #666; 
+        border-radius: 5px; cursor: pointer; font-weight: bold;
+    }
+    .arrow-icon {
+        width: 0; height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 16px solid yellow;
+    }
+</style>
+"""
+
+script = f"""
+<script>
+document.addEventListener("DOMContentLoaded", function() {{
+    var posData = {json.dumps(positions)};
+    var brgData = {json.dumps(bearings)};
+    var map = {map_id};
+
+    var idx = 0;
+    var isPlaying = false;
+
+    // Initial Marker and Trail
+    var mainMarker = L.marker(posData[0]).addTo(map);
+    var trail = L.polyline([posData[0]], {{color: 'cyan', weight: 3}}).addTo(map);
+
+    var headIcon = L.divIcon({{
+        className: 'arrow-parent',
+        html: '<div class="arrow-icon" id="arrow"></div>',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+    }});
+    var headMarker = L.marker(posData[0], {{icon: headIcon}}).addTo(map);
+
+    function step() {{
+        if (!isPlaying || idx >= posData.length - 1) {{
+            isPlaying = false;
+            return;
+        }}
+        idx++;
+        var p = posData[idx];
+        var b = brgData[idx];
+
+        mainMarker.setLatLng(p);
+        headMarker.setLatLng(p);
+
+        // Rotate the arrow
+        var el = document.getElementById('arrow');
+        if (el) el.style.transform = "rotate(" + b + "deg)";
+
+        trail.addLatLng(p);
+        map.panTo(p);
+
+        setTimeout(step, {FRAME_DELAY_MS});
+    }}
+
+    var Control = L.Control.extend({{
+        options: {{ position: 'topright' }},
+        onAdd: function() {{
+            var btn = L.DomUtil.create('div', 'play-btn-ctrl');
+            btn.innerHTML = '▶ Play Path';
+            btn.onclick = function() {{
+                if (!isPlaying) {{
+                    isPlaying = true;
+                    step();
+                }}
+            }};
+            return btn;
+        }}
+    }});
+    map.addControl(new Control());
+}});
+</script>
+"""
+
+m.get_root().header.add_child(folium.Element(style))
+m.get_root().html.add_child(folium.Element(script))
+
+# Save
+OUTPUT_FILE.parent.mkdir(exist_ok=True)
+m.save(str(OUTPUT_FILE))
+print(f"Success! Open: {{OUTPUT_FILE}}")import json
+import math
+import folium
+from pathlib import Path
+
 # ------------------------------------------------------------
 # Configuration
 # ------------------------------------------------------------

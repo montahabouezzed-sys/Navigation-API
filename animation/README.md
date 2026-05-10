@@ -13,7 +13,7 @@ The animation shows:
 
 The output is a standalone HTML file that runs entirely in the browser.
 
----
+-----------------------------------------
 
 ## 📁 Project Structure
 
@@ -46,6 +46,7 @@ Example format:
     ...
 ]
 ```
+-----------------------------------------
 
 ▶️ Running the Script
 
@@ -57,9 +58,10 @@ This creates:
 ```bash 
 output/map_animation.html
 ```
-
+-----------------------------------------
 
 🌐 Viewing the Animation
+
 Because browsers block JavaScript in file:/// mode,
 you must serve the file using a local HTTP server:
 ```bash 
@@ -71,17 +73,14 @@ http://localhost:8000/output/map_animation.html
 ```
 You will see:
 
-ESRI satellite imagery
-
-A yellow triangle heading marker
-
-A blue trail
-
-A “Play Path” button
-
-Smooth animated movement
+- ESRI satellite imagery
+- A yellow triangle heading marker
+- A blue trail
+- A “Play Path” button
+- A Smooth animated movement
 
 🧠 How It Works
+
 1. Bearing Calculation
 The script computes the heading between each pair of GPS points using standard trigonometry.
 
@@ -91,16 +90,15 @@ A Folium map is created with ESRI World Imagery tiles.
 3. JavaScript Injection
 Custom JS is injected after Folium’s map initialization to ensure:
 
-correct execution order
-
-visible UI controls
-
-working animation
+- correct execution order
+- visible UI controls
+- working animation
 
 4. Animation
 The triangle rotates according to the bearing and moves along the path with a configurable frame delay.
 
 
+-----------------------------------------
 
 ✔ Requirements
 Install dependencies:

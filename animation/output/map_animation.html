@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+<style>
+    .play-btn-ctrl {
+        background: white; padding: 10px; border: 2px solid #666; 
+        border-radius: 5px; cursor: pointer; font-weight: bold;
+    }
+    .arrow-icon {
+        width: 0; height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 16px solid yellow;
+    }
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_26c0b34fefb7622105725d054cc6cdd5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var posData = [[50.71, 7.09], [50.7103, 7.0902], [50.7106, 7.09045], [50.7109, 7.0907], [50.7112, 7.09095], [50.7115, 7.0912], [50.7118, 7.09145], [50.7121, 7.0917], [50.7124, 7.09195], [50.7127, 7.0922]];
+    var brgData = [22.8875709374783, 27.82050374662822, 27.8203524019911, 27.82020105544757, 27.820049707498924, 27.81989835940027, 27.819747009395144, 27.8195956582357, 27.81944430767834, 27.81944430767834];
+    var map = map_26c0b34fefb7622105725d054cc6cdd5;
+
+    var idx = 0;
+    var isPlaying = false;
+
+    // Initial Marker and Trail
+    var mainMarker = L.marker(posData[0]).addTo(map);
+    var trail = L.polyline([posData[0]], {color: 'cyan', weight: 3}).addTo(map);
+
+    var headIcon = L.divIcon({
+        className: 'arrow-parent',
+        html: '<div class="arrow-icon" id="arrow"></div>',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+    });
+    var headMarker = L.marker(posData[0], {icon: headIcon}).addTo(map);
+
+    function step() {
+        if (!isPlaying || idx >= posData.length - 1) {
+            isPlaying = false;
+            return;
+        }
+        idx++;
+        var p = posData[idx];
+        var b = brgData[idx];
+
+        mainMarker.setLatLng(p);
+        headMarker.setLatLng(p);
+
+        // Rotate the arrow
+        var el = document.getElementById('arrow');
+        if (el) el.style.transform = "rotate(" + b + "deg)";
+
+        trail.addLatLng(p);
+        map.panTo(p);
+
+        setTimeout(step, 300);
+    }
+
+    var Control = L.Control.extend({
+        options: { position: 'topright' },
+        onAdd: function() {
+            var btn = L.DomUtil.create('div', 'play-btn-ctrl');
+            btn.innerHTML = '▶ Play Path';
+            btn.onclick = function() {
+                if (!isPlaying) {
+                    isPlaying = true;
+                    step();
+                }
+            };
+            return btn;
+        }
+    });
+    map.addControl(new Control());
+});
+</script>
+    
+            <div class="folium-map" id="map_26c0b34fefb7622105725d054cc6cdd5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_26c0b34fefb7622105725d054cc6cdd5 = L.map(
+                "map_26c0b34fefb7622105725d054cc6cdd5",
+                {
+                    center: [50.71, 7.09],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 17,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_db76e3d73bad90ffe2eb3e7ee7a2ed7c = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri World Imagery",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_db76e3d73bad90ffe2eb3e7ee7a2ed7c.addTo(map_26c0b34fefb7622105725d054cc6cdd5);
+        
+</script>
+</html>

@@ -122,6 +122,8 @@ pip install folium
 
 ![Navigation Animation](output/animation.gif)
 
+![Navigation Animation](output/animation.gif)
+
 👉 [Download the full animation (HTML)](output/map_animation.html)
 
 

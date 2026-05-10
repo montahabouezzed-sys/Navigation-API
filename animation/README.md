@@ -120,9 +120,8 @@ pip install folium
 
 ## 🎬 Animation Preview
 
-![Navigation Animation](output/animation.gif)
-
-![Navigation Animation](output/animation.gif)
+![Navigation Animatio](output/animation.gif))
+*This animation  based on provided JSON file psotions example.*
 
 👉 [Download the full animation (HTML)](output/map_animation.html)
 
